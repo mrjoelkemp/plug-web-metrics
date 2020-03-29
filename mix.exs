@@ -39,7 +39,8 @@ defmodule Plugwebmetrics.MixProject do
   defp deps do
     [
       {:telemetry, "~> 0.4.1"},
-      {:plug_cowboy, "~> 2.1"}
+      {:plug_cowboy, "~> 2.1"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 end
