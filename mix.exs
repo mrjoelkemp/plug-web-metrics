@@ -9,7 +9,9 @@ defmodule Plugwebmetrics.MixProject do
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
-      deps: deps()
+      deps: deps(),
+      aliases: aliases(),
+      preferred_cli_env: ["test.ci": :test]
     ]
   end
 
@@ -41,6 +43,12 @@ defmodule Plugwebmetrics.MixProject do
       {:telemetry, "~> 0.4.1"},
       {:plug_cowboy, "~> 2.1"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp aliases do
+    [
+      "test.ci": ["test --color --max-cases=10"]
     ]
   end
 end
